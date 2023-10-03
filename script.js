@@ -255,4 +255,91 @@ console.log(arrayPalabras);
 var arrayFiltrado = filtrarPorLongitud(arrayPalabras, 5);
 console.log(arrayFiltrado);
 
+///18-  Crear un array de objetos `estudiantes`, donde cada objeto tenga propiedades como
+//`nombre`, `edad` y `promedio`
+
+function Estudiante(nombre, edad, promedio){
+this.nombre = nombre;
+this.edad = edad;
+this.promedio = promedio;
+}
+
+var estudiante1 = new Estudiante("pepe", 21, 8.71);
+var estudiante2 = new Estudiante("alan", 45, 8);
+var estudiante3 = new Estudiante("ian", 13, 6.67);
+var estudiante4 = new Estudiante("fiorella", 19, 4.5);
+
+var arrayStuidents = [];
+arrayStuidents.push(estudiante1);
+arrayStuidents.push(estudiante2);
+arrayStuidents.push(estudiante3);
+arrayStuidents.push(estudiante4);
+
+console.log(arrayStuidents);
+
+///19- . Crear una función `buscarEstudiante` que tome un array de estudiantes y un nombre, y
+//retorne el objeto del estudiante con ese nombre.
+
+function buscarEstudiante (array, name){
+    var stuident = new Estudiante();
+    for(var i=0; i<array.length;i++){
+        if(array[i].nombre = name)
+        stuident = array[i];
+    }
+    return stuident;
+}
+
+console.log("VOY A BUSACAR UN ESTUDIANTE POR SU NOMBRE");
+var buscado = buscarEstudiante(arrayStuidents, "alan");
+console.log(buscado);
+
+/// 20- Crear una función `promedioClase` que tome el array de estudiantes y retorne el promedio
+//de sus promedios.
+
+function calcularPromedio (array){
+  var prom=0;
+  var cantAlumnos = array.length;
+  var result;
+  for(var i=0; i<array.length;i++){
+    prom += array[i].promedio;
+    
+  } 
+  console.log("Aca mjuestro los datos despues del for");
+  console.log(prom);
+  console.log(cantAlumnos);
+
+  result = (prom/cantAlumnos);
+  console.log(result);
+  return result;
+}
+
+console.log("CALCULANDO PROMEDIO");
+var promedioClase = calcularPromedio(arrayStuidents);
+console.log("El promedio de la clase es " + promedioClase);
+
+///21- Crear un objeto `coche` con propiedades como `marca`, `modelo` y `anio`, y métodos como
+///`arrancar` y `detener`.
+
+function Coche (marca, anio, modelo){
+    this.marca = marca;
+    this.anio = anio;
+    this.modelo = modelo;
+
+}
+
+var car = new Coche("chevrolet", 2018, "spin");
+console.log(car);
+
+
+Coche.prototype.arrancar =function (){
+    console.log("soy el metodo arrancar");
+}
+
+Coche.prototype.detener = function (){
+    console.log("soy el metodo detener");
+} 
+
+car.arrancar();
+car.detener();
+
 
